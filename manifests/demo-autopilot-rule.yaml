@@ -1,0 +1,22 @@
+apiVersion: autopilot.libopenstorage.org/v1alpha1
+kind: AutopilotRule
+metadata:
+  name: demo-volume-resize
+spec:
+  selector:
+    matchLabels:
+      app: postgres
+  namespaceSelector:
+    matchLabels:
+      type: db
+  conditions:
+    expressions:
+    - key: "100 * (px_volume_usage_bytes / px_volume_capacity_bytes)"
+      operator: Gt
+      values:
+        - "80"
+  actions:
+  - name: openstorage.io.action.volume/resize
+    params:
+      scalepercentage: "100"
+      maxsize: "100Gi"

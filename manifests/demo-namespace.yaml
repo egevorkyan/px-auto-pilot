@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: demo-pgsql-01
+  labels:
+    type: db
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: demo-pgsql-02
+  labels:
+    type: db
