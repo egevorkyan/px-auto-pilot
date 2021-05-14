@@ -11,6 +11,18 @@ Portworx is advanced and amazing storage platform which supports all major Kuber
 
 Checking prerequisites:
 ```bash
+redhat2020: oc get nodes
+NAME                        STATUS   ROLES          AGE   VERSION
+demo-hvwtp-master-0         Ready    master         21d   v1.20.0+7d0a2b2
+demo-hvwtp-master-1         Ready    master         21d   v1.20.0+7d0a2b2
+demo-hvwtp-master-2         Ready    master         21d   v1.20.0+7d0a2b2
+demo-hvwtp-portworx-7446w   Ready    storage        40h   v1.20.0+7d0a2b2
+demo-hvwtp-portworx-ngq2c   Ready    storage        40h   v1.20.0+7d0a2b2
+demo-hvwtp-portworx-t787c   Ready    storage        40h   v1.20.0+7d0a2b2
+demo-hvwtp-worker-0-9zv2g   Ready    infra,worker   21d   v1.20.0+7d0a2b2
+demo-hvwtp-worker-0-s48ck   Ready    worker         11d   v1.20.0+7d0a2b2
+demo-hvwtp-worker-0-zmjsl   Ready    infra,worker   21d   v1.20.0+7d0a2b2
+
 redhat2020: oc get pods -n portworx
 NAME                                                 READY   STATUS    RESTARTS   AGE
 autopilot-ff7ff4694-8vg44                            1/1     Running   0          35h
